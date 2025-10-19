@@ -1,0 +1,124 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+   background-color:rgb(66, 27, 155);
+   
+}
+header{
+    display: flex;
+    justify-content: space-around;
+    background-color:#F0E6FF;
+    color:rgb(66, 27, 155); 
+    position: relative;
+}
+header h1{
+   font-size: 30px;
+}
+.game-container{
+    margin: 20px;
+   
+}
+#restart-btn{
+    padding: 20px;
+    background:linear-gradient(65deg,rgb(145, 7, 205) 0%,rgb(66, 27, 155) 100%);
+    margin: 10px;
+    border: #D4C2FF;
+    border-radius: 10px;
+   font-size: 15px;
+   font-weight: 550;
+   color: white;
+}
+#restart-btn:hover{
+    color:skyblue;
+    background:linear-gradient(65deg, rgb(66, 27, 155) 0%, rgb(80, 45, 175) 100%);
+}
+.memory-container{
+      display:grid;
+      grid-template-columns: repeat(4,1fr);
+      gap:70px;
+      margin-bottom:20px;
+      padding:20px;
+      perspective: 1000px;
+}
+.memory-card{
+    display: flex;
+    position: relative;
+    transform-style: preserve-3d;
+    margin-bottom: 50px;
+    justify-content: space-around;
+    cursor:pointer;
+    
+}
+.memory-card.flip{
+    transform: rotateY(180deg);
+}
+#comment{
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+    padding-top: 15px;
+}
+.memory-card.match {
+    cursor: default;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.8);
+}
+.front-face,.back-face{
+     height: 50px;
+     width:50px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     backface-visibility: hidden;
+     position: absolute;
+     user-select: none;
+     padding: 20px;
+    box-shadow: 0 0 20px 5px rgba(138, 82, 247, 0.5);
+    border-radius: 10px;
+
+}
+.front-face{
+    background-color:#D4C2FF;
+    font-size: 20px;
+    transform: rotateY(180deg);
+    font-size: 40px;
+
+    
+}
+.back-face{
+    background-color:rgb(66, 27, 155);
+    font-size: 40px;
+    margin-bottom: 20px;
+    
+}
+@media (max-width:768px) {
+    .memory-container{
+     grid-template-columns: repeat(3,1fr);
+    }
+
+}
+@media (max-width:480px) {
+    .memory-container{
+     grid-template-columns: repeat(2,1fr);
+    }
+}
+@media (max-width:320px){
+    header h1{
+        font-size: 20px;
+    }
+    #restart-btn{
+        padding:10px;
+        font-size: 12px;
+    }
+}
+
+
+
+
+
+
